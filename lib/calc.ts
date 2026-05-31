@@ -293,7 +293,7 @@ export function calculateResult(profile: AppState['profile']): CalculationResult
 
   let comfortLevel: CalculationResult['comfortLevel'] = 'TEKOR';
   if (sisaPercentage > 35) comfortLevel = 'LEGA';
-  else if (sisaPercentage > 15) comfortLevel = 'NYAMAN';
+  else if (sisaPercentage >= 15) comfortLevel = 'NYAMAN';
   else if (sisaPercentage >= 0) comfortLevel = 'BERTAHAN';
 
   let verdict: CalculationResult['verdict'] = 'TEKOR';
