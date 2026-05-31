@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+@theme {
+  /* Primary — Bibit Green */
+  --color-primary: #00A86B;
+  --color-primary-dark: #007A4D;
+  --color-primary-container: #E6F7F1;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #003D24;
+
+  /* Surface */
+  --color-surface: #ffffff;
+  --color-surface-dim: #E8EDE9;
+  --color-surface-bright: #ffffff;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #F2F7F4;
+  --color-surface-container: #EBF3EE;
+  --color-surface-container-high: #E4EEE7;
+  --color-surface-container-highest: #DDE9E0;
+
+  /* On Surface */
+  --color-on-surface: #1A1A1A;
+  --color-on-surface-variant: #4A5E52;
+  --color-outline: #7A9382;
+  --color-outline-variant: #C2D5CA;
+
+  /* Semantic */
+  --color-error: #D32F2F;
+  --color-on-error: #ffffff;
+  --color-error-container: #FDECEA;
+  --color-background: #F5F8F6;
+  --color-on-background: #1A1A1A;
+  --color-surface-variant: #DDE9E0;
+
+  /* Verdict Colors */
+  --color-tekor: #D32F2F;
+  --color-tekor-bg: #FDECEA;
+  --color-tekor-border: #FFCDD2;
+  --color-bertahan: #E65100;
+  --color-bertahan-bg: #FFF3E0;
+  --color-bertahan-border: #FFCC80;
+  --color-nyaman: #F9A825;
+  --color-nyaman-bg: #FFFDE7;
+  --color-nyaman-border: #FFF176;
+  --color-lega: #00A86B;
+  --color-lega-bg: #E6F7F1;
+  --color-lega-border: #A7F3D0;
+
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-on-background);
+    font-family: var(--font-sans);
+  }
+}
+
+@layer utilities {
+  /* Typography scale */
+  .text-display {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.1;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  .text-headline-lg {
+    font-size: 1.75rem;
+    line-height: 1.25;
+    font-weight: 700;
+  }
+  .text-headline-md {
+    font-size: 1.4rem;
+    line-height: 1.3;
+    font-weight: 700;
+  }
+  .text-headline-lg-mobile {
+    font-size: 1.5rem;
+    line-height: 1.3;
+    font-weight: 700;
+  }
+  .text-body-lg {
+    font-size: 1.125rem;
+    line-height: 1.6;
+  }
+  .text-body-md {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+  .text-label-md {
+    font-size: 0.875rem;
+    line-height: 1.4;
+    font-weight: 600;
+  }
+  .text-label-sm {
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+
+  /* Verdict utilities */
+  .text-verdict-tekor   { color: var(--color-tekor); }
+  .text-verdict-bertahan { color: var(--color-bertahan); }
+  .text-verdict-nyaman  { color: var(--color-nyaman); }
+  .text-verdict-lega    { color: var(--color-lega); }
+  .bg-verdict-tekor    { background-color: color-mix(in srgb, var(--color-tekor) 10%, transparent); }
+  .bg-verdict-bertahan { background-color: color-mix(in srgb, var(--color-bertahan) 10%, transparent); }
+  .bg-verdict-nyaman   { background-color: color-mix(in srgb, var(--color-nyaman) 10%, transparent); }
+  .bg-verdict-lega     { background-color: color-mix(in srgb, var(--color-lega) 10%, transparent); }
+
+  /* Print */
+  @media print {
+    .no-print { display: none !important; }
+    .print-only { display: block !important; }
+    body { background: white; font-size: 12px; }
+    nav, footer, button { display: none !important; }
+  }
+  .print-only { display: none; }
+}

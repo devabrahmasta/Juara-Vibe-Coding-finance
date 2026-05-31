@@ -1,0 +1,808 @@
+{
+  "_meta": {
+    "note": "WAJIB VERIFIKASI UMK sebelum deploy. Cek di BPS provinsi atau Kemnaker.go.id. Angka dengan tanda [EST] adalah estimasi, sisanya dari riset terbaru.",
+    "umk_source": "BPS / Kemnaker 2026",
+    "cost_source": "Estimasi berbasis data BPS SBH 2022 + tren harga properti 2026",
+    "preference_source": "GoodStats Survei Kota Pilihan Masyarakat Indonesia 2026 (n=1000, April 2026)",
+    "national_stats_2025": {
+      "avg_employee_wage": 3330000,
+      "avg_informal_income": 1940000,
+      "unemployment_rate_pct": 4.85,
+      "labor_participation_rate_pct": 70.59,
+      "source": "BPS Sakernas Agustus 2025",
+      "ump_avg_national": 3315762
+    },
+    "last_updated": "Mei 2026",
+    "umk_label": "Nilai umk di setiap kota = estimasi UMK 2026 (UMP 2025 resmi BPS x 1.065)."
+  },
+  "city_archetypes": {
+    "work_hub": "Pusat lowongan kerja dan gaji tinggi",
+    "study_city": "Favorit mahasiswa, kampus berkualitas",
+    "retire_haven": "Ideal untuk masa tua, tenang dan murah",
+    "all_rounder": "Seimbang antara kerja, belajar, dan hidup",
+    "industrial": "Pusat industri dan manufaktur",
+    "eastern_hub": "Pusat ekonomi luar Jawa"
+  },
+  "cities": [
+    {
+      "id": "jakarta",
+      "name": "Jakarta",
+      "province": "DKI Jakarta",
+      "tier": "metropolitan",
+      "umk": 5747550,
+      "ump_2025_official": 5396761,
+      "umk_verified": true,
+      "umk_note": "UMP DKI Jakarta 2025 resmi Rp 5.396.761, estimasi 2026 x 1.065",
+      "umk_source": "Kemnaker / Pemprov DKI Jakarta 2025",
+      "archetype": "work_hub",
+      "archetype_label": "Pusat Kerja #1 Indonesia",
+      "preferences": {
+        "highlight": "Peluang karir terbesar, gaji tertinggi, fasilitas paling lengkap — tapi biaya hidup nomor satu.",
+        "skor_karir": 98,
+        "skor_fasilitas": 95,
+        "skor_affordable": 15,
+        "tags": ["high_salary", "expensive", "complete_facilities", "networking"]
+      },
+      "has_area_selector": true,
+      "areas": [
+        {
+          "id": "premium",
+          "label": "Pusat / Premium",
+          "examples": "Jaksel, Jakpus, Sudirman, Tebet, SCBD",
+          "housing_multiplier": 1.6,
+          "transport_multiplier": 0.8
+        },
+        {
+          "id": "tengah",
+          "label": "Tengah",
+          "examples": "Jakbar, Jaktim, Jakut tengah",
+          "housing_multiplier": 1.0,
+          "transport_multiplier": 1.0
+        },
+        {
+          "id": "pinggiran",
+          "label": "Pinggiran",
+          "examples": "Cakung, Kramat Jati, Cilincing, Rorotan",
+          "housing_multiplier": 0.6,
+          "transport_multiplier": 1.2
+        }
+      ],
+      "baseline": {
+        "kos": 2500000,
+        "makan_masak": 1300000,
+        "makan_beli": 2800000,
+        "transport_motor": 700000,
+        "transport_mobil": 2000000,
+        "transport_umum": 400000,
+        "utilitas": 700000
+      },
+      "comfort_thresholds": {
+        "bertahan": 5500000,
+        "nyaman": 8700000,
+        "lega": 12000000
+      }
+    },
+    {
+      "id": "bekasi",
+      "name": "Bekasi",
+      "province": "Jawa Barat",
+      "tier": "metropolitan",
+      "umk": 5922000,
+      "ump_2025_official": 5561019,
+      "umk_verified": false,
+      "umk_note": "UMK Kab. Bekasi 2025 tertinggi di Indonesia, estimasi 2026 [EST]",
+      "umk_source": "Kemnaker / Disnakertrans Jawa Barat 2025 [EST]",
+      "archetype": "industrial",
+      "archetype_label": "Pusat Industri, UMK Tertinggi RI",
+      "preferences": {
+        "highlight": "UMK tertinggi Indonesia berkat kawasan industri raksasa. Cocok untuk pekerja pabrik dan manufaktur.",
+        "skor_karir": 80,
+        "skor_fasilitas": 70,
+        "skor_affordable": 40,
+        "tags": ["high_umk", "industrial", "commuter_city", "manufacturing"]
+      },
+      "has_area_selector": true,
+      "areas": [
+        {
+          "id": "pusat",
+          "label": "Pusat Kota Bekasi",
+          "examples": "Bekasi Selatan, Bekasi Timur",
+          "housing_multiplier": 1.3,
+          "transport_multiplier": 1.0
+        },
+        {
+          "id": "pinggiran",
+          "label": "Cikarang / Tambun",
+          "examples": "Cikarang, Tambun, Cibitung",
+          "housing_multiplier": 0.75,
+          "transport_multiplier": 1.1
+        }
+      ],
+      "baseline": {
+        "kos": 2200000,
+        "makan_masak": 1200000,
+        "makan_beli": 2500000,
+        "transport_motor": 600000,
+        "transport_mobil": 1800000,
+        "transport_umum": 350000,
+        "utilitas": 650000
+      },
+      "comfort_thresholds": {
+        "bertahan": 5000000,
+        "nyaman": 8000000,
+        "lega": 11000000
+      }
+    },
+    {
+      "id": "tangerang",
+      "name": "Tangerang",
+      "province": "Banten",
+      "tier": "metropolitan",
+      "umk": 4772663,
+      "ump_2025_official": 4481569,
+      "umk_verified": false,
+      "umk_note": "UMK Kota Tangerang 2025 x 1.065, termasuk Tangerang Selatan [EST]",
+      "umk_source": "Kemnaker / Disnakertrans Banten 2025 [EST]",
+      "archetype": "industrial",
+      "archetype_label": "Kota Industri & Penyangga Barat Jakarta",
+      "preferences": {
+        "highlight": "Kawasan industri dan perkantoran besar di sisi barat Jakarta. Banyak peluang kerja, harga lebih terjangkau dari Jakarta.",
+        "skor_karir": 82,
+        "skor_fasilitas": 78,
+        "skor_affordable": 45,
+        "tags": ["industrial", "commuter_city", "growing", "affordable_vs_jakarta"]
+      },
+      "has_area_selector": true,
+      "areas": [
+        {
+          "id": "pusat",
+          "label": "Pusat / Tangerang Selatan",
+          "examples": "Bintaro, BSD, Alam Sutera, Gading Serpong",
+          "housing_multiplier": 1.4,
+          "transport_multiplier": 0.9
+        },
+        {
+          "id": "pinggiran",
+          "label": "Pinggiran",
+          "examples": "Ciledug, Larangan, Periuk",
+          "housing_multiplier": 0.75,
+          "transport_multiplier": 1.1
+        }
+      ],
+      "baseline": {
+        "kos": 1900000,
+        "makan_masak": 1150000,
+        "makan_beli": 2300000,
+        "transport_motor": 580000,
+        "transport_mobil": 1700000,
+        "transport_umum": 320000,
+        "utilitas": 620000
+      },
+      "comfort_thresholds": {
+        "bertahan": 4500000,
+        "nyaman": 7200000,
+        "lega": 10500000
+      }
+    },
+    {
+      "id": "depok",
+      "name": "Depok",
+      "province": "Jawa Barat",
+      "tier": "metropolitan",
+      "umk": 5533442,
+      "ump_2025_official": 5195721,
+      "umk_verified": false,
+      "umk_note": "UMK Kota Depok 2025 tertinggi ke-3 di Jabodetabek [EST]",
+      "umk_source": "Kemnaker / Disnakertrans Jawa Barat 2025 [EST]",
+      "archetype": "study_city",
+      "archetype_label": "Kota Satelit Pendidikan Jakarta Selatan",
+      "preferences": {
+        "highlight": "Rumah bagi kampus-kampus besar (UI, Gunadarma, dll) sekaligus satelit pemukiman selatan Jakarta.",
+        "skor_karir": 72,
+        "skor_fasilitas": 80,
+        "skor_affordable": 50,
+        "tags": ["university_city", "residential", "south_jakarta_commuter", "green"]
+      },
+      "has_area_selector": false,
+      "areas": [],
+      "baseline": {
+        "kos": 2100000,
+        "makan_masak": 1100000,
+        "makan_beli": 2400000,
+        "transport_motor": 560000,
+        "transport_mobil": 1700000,
+        "transport_umum": 310000,
+        "utilitas": 620000
+      },
+      "comfort_thresholds": {
+        "bertahan": 4800000,
+        "nyaman": 7800000,
+        "lega": 11000000
+      }
+    },
+    {
+      "id": "surabaya",
+      "name": "Surabaya",
+      "province": "Jawa Timur",
+      "tier": "metropolitan",
+      "umk": 4725000,
+      "ump_2025_official": 4440000,
+      "umk_verified": false,
+      "umk_note": "UMK Kota Surabaya 2025 x 1.065 [EST]",
+      "umk_source": "Kemnaker / Pemprov Jawa Timur 2025 [EST]",
+      "archetype": "work_hub",
+      "archetype_label": "Work Hub #2 Indonesia",
+      "preferences": {
+        "highlight": "Kota metropolitan terbesar kedua, dengan biaya hidup lebih terjangkau dari Jakarta. Peluang kerja melimpah.",
+        "skor_karir": 90,
+        "skor_fasilitas": 88,
+        "skor_affordable": 52,
+        "tags": ["second_city", "affordable_metro", "work_hub", "balanced"]
+      },
+      "has_area_selector": true,
+      "areas": [
+        {
+          "id": "pusat",
+          "label": "Pusat (Genteng, Gubeng)",
+          "examples": "Genteng, Tegalsari, Gubeng, Mulyorejo",
+          "housing_multiplier": 1.4,
+          "transport_multiplier": 0.9
+        },
+        {
+          "id": "tengah",
+          "label": "Tengah (Rungkut, Wiyung)",
+          "examples": "Wonocolo, Wiyung, Rungkut, Wonokromo",
+          "housing_multiplier": 1.0,
+          "transport_multiplier": 1.0
+        },
+        {
+          "id": "pinggiran",
+          "label": "Pinggiran (Benowo, Pakal)",
+          "examples": "Benowo, Pakal, Lakarsantri",
+          "housing_multiplier": 0.65,
+          "transport_multiplier": 1.15
+        }
+      ],
+      "baseline": {
+        "kos": 1800000,
+        "makan_masak": 1100000,
+        "makan_beli": 2200000,
+        "transport_motor": 550000,
+        "transport_mobil": 1600000,
+        "transport_umum": 300000,
+        "utilitas": 600000
+      },
+      "comfort_thresholds": {
+        "bertahan": 4200000,
+        "nyaman": 7000000,
+        "lega": 10000000
+      }
+    },
+    {
+      "id": "bandung",
+      "name": "Bandung",
+      "province": "Jawa Barat",
+      "tier": "metropolitan",
+      "umk": 4209000,
+      "ump_2025_official": 3952582,
+      "umk_verified": false,
+      "umk_note": "UMK Kota Bandung 2025 x 1.065 [EST]",
+      "umk_source": "Kemnaker / Disnakertrans Jawa Barat 2025 [EST]",
+      "archetype": "all_rounder",
+      "archetype_label": "Kota Serba Bisa (Kerja, Kuliah, Pensiun)",
+      "preferences": {
+        "highlight": "Cuaca sejuk, budaya kreatif, kota pelajar. Pilihan favorit untuk work-life balance di luar Jakarta.",
+        "skor_karir": 78,
+        "skor_fasilitas": 85,
+        "skor_affordable": 65,
+        "tags": ["creative_city", "cool_weather", "university", "fashion_food"]
+      },
+      "has_area_selector": true,
+      "areas": [
+        {
+          "id": "pusat",
+          "label": "Pusat (Dago, Ciumbuleuit)",
+          "examples": "Braga, Dago, Ciumbuleuit, Setiabudi",
+          "housing_multiplier": 1.3,
+          "transport_multiplier": 0.9
+        },
+        {
+          "id": "tengah",
+          "label": "Tengah (Antapani, Buahbatu)",
+          "examples": "Antapani, Buahbatu, Ujungberung, Arcamanik",
+          "housing_multiplier": 1.0,
+          "transport_multiplier": 1.0
+        },
+        {
+          "id": "pinggiran",
+          "label": "Pinggiran (Gedebage, Cibiru)",
+          "examples": "Gedebage, Cibiru, Panyileukan, Cinambo",
+          "housing_multiplier": 0.65,
+          "transport_multiplier": 1.1
+        }
+      ],
+      "baseline": {
+        "kos": 1500000,
+        "makan_masak": 1000000,
+        "makan_beli": 2000000,
+        "transport_motor": 500000,
+        "transport_mobil": 1500000,
+        "transport_umum": 250000,
+        "utilitas": 550000
+      },
+      "comfort_thresholds": {
+        "bertahan": 3800000,
+        "nyaman": 6500000,
+        "lega": 9500000
+      }
+    },
+    {
+      "id": "bogor",
+      "name": "Bogor",
+      "province": "Jawa Barat",
+      "tier": "besar",
+      "umk": 5126746,
+      "ump_2025_official": 4813378,
+      "umk_verified": false,
+      "umk_note": "UMK Kota Bogor 2025 x 1.065 [EST] — anomali tinggi karena dekat Jabotabek",
+      "umk_source": "Kemnaker / Disnakertrans Jawa Barat 2025 [EST]",
+      "archetype": "all_rounder",
+      "archetype_label": "Kota Hujan, Alam & Pendidikan",
+      "preferences": {
+        "highlight": "Kota penyangga Jabodetabek dengan alam hijau dan suhu sejuk. Populer untuk keluarga muda.",
+        "skor_karir": 68,
+        "skor_fasilitas": 75,
+        "skor_affordable": 58,
+        "tags": ["family_city", "green", "cool_weather", "commuter_to_jakarta"]
+      },
+      "has_area_selector": false,
+      "areas": [],
+      "baseline": {
+        "kos": 1600000,
+        "makan_masak": 1050000,
+        "makan_beli": 2100000,
+        "transport_motor": 520000,
+        "transport_mobil": 1550000,
+        "transport_umum": 260000,
+        "utilitas": 560000
+      },
+      "comfort_thresholds": {
+        "bertahan": 3800000,
+        "nyaman": 6500000,
+        "lega": 9500000
+      }
+    },
+    {
+      "id": "yogyakarta",
+      "name": "Yogyakarta",
+      "province": "DI Yogyakarta",
+      "tier": "besar",
+      "umk": 2411246,
+      "ump_2025_official": 2264080,
+      "umk_verified": true,
+      "umk_note": "UMK Kota Yogyakarta 2025 resmi, termasuk terendah se-Indonesia",
+      "umk_source": "Kemnaker / Disnakertrans DIY 2025",
+      "archetype": "study_city",
+      "archetype_label": "Kota Pelajar #1 & Surga Masa Tua",
+      "preferences": {
+        "highlight": "Biaya hidup terendah, kota pelajar, budaya kaya. Ideal untuk mahasiswa, seniman, dan pensiunan.",
+        "skor_karir": 55,
+        "skor_fasilitas": 80,
+        "skor_affordable": 92,
+        "tags": ["cheapest_living", "student_city", "culture", "tourism"]
+      },
+      "has_area_selector": false,
+      "areas": [],
+      "baseline": {
+        "kos": 900000,
+        "makan_masak": 800000,
+        "makan_beli": 1600000,
+        "transport_motor": 350000,
+        "transport_mobil": 1200000,
+        "transport_umum": 150000,
+        "utilitas": 450000
+      },
+      "comfort_thresholds": {
+        "bertahan": 2500000,
+        "nyaman": 4500000,
+        "lega": 7000000
+      }
+    },
+    {
+      "id": "solo",
+      "name": "Solo (Surakarta)",
+      "province": "Jawa Tengah",
+      "tier": "sedang",
+      "umk": 2310000,
+      "ump_2025_official": 2169979,
+      "umk_verified": false,
+      "umk_note": "UMK Kota Solo 2025 x 1.065 [EST]",
+      "umk_source": "Kemnaker / Disnakertrans Jawa Tengah 2025 [EST]",
+      "archetype": "retire_haven",
+      "archetype_label": "Kota Pensiun Terbaik Indonesia 2026",
+      "preferences": {
+        "highlight": "Kota kecil nyaman dengan biaya hidup rendah, kuliner legendaris, dan gaya hidup santai. Sempurna untuk pensiun.",
+        "skor_karir": 45,
+        "skor_fasilitas": 70,
+        "skor_affordable": 90,
+        "tags": ["retirement", "low_cost", "culinary", "traditional"]
+      },
+      "has_area_selector": false,
+      "areas": [],
+      "baseline": {
+        "kos": 800000,
+        "makan_masak": 750000,
+        "makan_beli": 1500000,
+        "transport_motor": 320000,
+        "transport_mobil": 1100000,
+        "transport_umum": 120000,
+        "utilitas": 400000
+      },
+      "comfort_thresholds": {
+        "bertahan": 2300000,
+        "nyaman": 4000000,
+        "lega": 5800000
+      }
+    },
+    {
+      "id": "malang",
+      "name": "Malang",
+      "province": "Jawa Timur",
+      "tier": "besar",
+      "umk": 3290000,
+      "ump_2025_official": 3090141,
+      "umk_verified": false,
+      "umk_note": "UMK Kota Malang 2025 x 1.065 [EST]",
+      "umk_source": "Kemnaker / Disnakertrans Jawa Timur 2025 [EST]",
+      "archetype": "study_city",
+      "archetype_label": "Kota Pelajar & Pensiun Nyaman",
+      "preferences": {
+        "highlight": "Udara sejuk, banyak kampus, dan biaya hidup terjangkau. Alternatif ideal dari Surabaya.",
+        "skor_karir": 62,
+        "skor_fasilitas": 75,
+        "skor_affordable": 78,
+        "tags": ["student_city", "cool_weather", "affordable", "culinary"]
+      },
+      "has_area_selector": false,
+      "areas": [],
+      "baseline": {
+        "kos": 1100000,
+        "makan_masak": 900000,
+        "makan_beli": 1800000,
+        "transport_motor": 400000,
+        "transport_mobil": 1300000,
+        "transport_umum": 180000,
+        "utilitas": 480000
+      },
+      "comfort_thresholds": {
+        "bertahan": 3000000,
+        "nyaman": 5200000,
+        "lega": 7500000
+      }
+    },
+    {
+      "id": "semarang",
+      "name": "Semarang",
+      "province": "Jawa Tengah",
+      "tier": "besar",
+      "umk": 3454000,
+      "ump_2025_official": 3243800,
+      "umk_verified": false,
+      "umk_note": "UMK Kota Semarang 2025 x 1.065 [EST]",
+      "umk_source": "Kemnaker / Disnakertrans Jawa Tengah 2025 [EST]",
+      "archetype": "all_rounder",
+      "archetype_label": "Kota Tengah yang Underrated",
+      "preferences": {
+        "highlight": "Kota port strategis dengan biaya hidup moderat. Pertumbuhan ekonomi solid dan underrated dibanding kota lain.",
+        "skor_karir": 72,
+        "skor_fasilitas": 78,
+        "skor_affordable": 72,
+        "tags": ["port_city", "balanced", "growing", "underrated"]
+      },
+      "has_area_selector": false,
+      "areas": [],
+      "baseline": {
+        "kos": 1200000,
+        "makan_masak": 950000,
+        "makan_beli": 1900000,
+        "transport_motor": 450000,
+        "transport_mobil": 1400000,
+        "transport_umum": 200000,
+        "utilitas": 500000
+      },
+      "comfort_thresholds": {
+        "bertahan": 3200000,
+        "nyaman": 5500000,
+        "lega": 8000000
+      }
+    },
+    {
+      "id": "denpasar",
+      "name": "Denpasar",
+      "province": "Bali",
+      "tier": "besar",
+      "umk": 3191337,
+      "ump_2025_official": 2996560,
+      "umk_verified": true,
+      "umk_note": "UMK Kota Denpasar 2025 resmi x 1.065",
+      "umk_source": "Kemnaker / Disnakertrans Bali 2025",
+      "archetype": "all_rounder",
+      "archetype_label": "Destinasi Wisata & Hidup Berkualitas",
+      "preferences": {
+        "highlight": "Kombinasi kota modern, wisata, dan budaya Bali. Pilihan menarik untuk pekerja di sektor pariwisata dan digital.",
+        "skor_karir": 70,
+        "skor_fasilitas": 82,
+        "skor_affordable": 68,
+        "tags": ["tourism", "expat_friendly", "culture", "digital_nomad"]
+      },
+      "has_area_selector": false,
+      "areas": [],
+      "baseline": {
+        "kos": 1500000,
+        "makan_masak": 1000000,
+        "makan_beli": 2200000,
+        "transport_motor": 450000,
+        "transport_mobil": 1500000,
+        "transport_umum": 180000,
+        "utilitas": 550000
+      },
+      "comfort_thresholds": {
+        "bertahan": 3500000,
+        "nyaman": 6000000,
+        "lega": 8500000
+      }
+    },
+    {
+      "id": "medan",
+      "name": "Medan",
+      "province": "Sumatera Utara",
+      "tier": "metropolitan",
+      "umk": 3800000,
+      "ump_2025_official": 3567170,
+      "umk_verified": false,
+      "umk_note": "UMK Kota Medan 2025 x 1.065 [EST]",
+      "umk_source": "Kemnaker / Disnakertrans Sumatera Utara 2025 [EST]",
+      "archetype": "work_hub",
+      "archetype_label": "Hub Kerja & Studi Sumatera",
+      "preferences": {
+        "highlight": "Kota metropolitan terbesar di Sumatera. Ekonomi dinamis dengan kuliner paling beragam di luar Jawa.",
+        "skor_karir": 78,
+        "skor_fasilitas": 75,
+        "skor_affordable": 60,
+        "tags": ["sumatera_hub", "culinary_diverse", "work_hub", "affordable_metro"]
+      },
+      "has_area_selector": false,
+      "areas": [],
+      "baseline": {
+        "kos": 1300000,
+        "makan_masak": 1000000,
+        "makan_beli": 2000000,
+        "transport_motor": 500000,
+        "transport_mobil": 1500000,
+        "transport_umum": 250000,
+        "utilitas": 550000
+      },
+      "comfort_thresholds": {
+        "bertahan": 3500000,
+        "nyaman": 6000000,
+        "lega": 9000000
+      }
+    },
+    {
+      "id": "palembang",
+      "name": "Palembang",
+      "province": "Sumatera Selatan",
+      "tier": "besar",
+      "umk": 3681471,
+      "ump_2025_official": 3456544,
+      "umk_verified": false,
+      "umk_note": "UMP Sumatera Selatan 2025 x 1.065 [EST]",
+      "umk_source": "Kemnaker / Disnakertrans Sumatera Selatan 2025 [EST]",
+      "archetype": "work_hub",
+      "archetype_label": "Hub Ekonomi Sumatera Selatan",
+      "preferences": {
+        "highlight": "Kota sungai dengan sejarah panjang. Ekonomi berbasis energi (batu bara, minyak) dengan biaya hidup moderat.",
+        "skor_karir": 65,
+        "skor_fasilitas": 70,
+        "skor_affordable": 75,
+        "tags": ["energy_city", "river_city", "affordable", "growing"]
+      },
+      "has_area_selector": false,
+      "areas": [],
+      "baseline": {
+        "kos": 1200000,
+        "makan_masak": 900000,
+        "makan_beli": 1800000,
+        "transport_motor": 450000,
+        "transport_mobil": 1350000,
+        "transport_umum": 200000,
+        "utilitas": 490000
+      },
+      "comfort_thresholds": {
+        "bertahan": 3000000,
+        "nyaman": 5200000,
+        "lega": 7500000
+      }
+    },
+    {
+      "id": "pekanbaru",
+      "name": "Pekanbaru",
+      "province": "Riau",
+      "tier": "besar",
+      "umk": 3736599,
+      "ump_2025_official": 3509859,
+      "umk_verified": false,
+      "umk_note": "UMP Riau 2025 x 1.065 [EST]",
+      "umk_source": "Kemnaker / Disnakertrans Riau 2025 [EST]",
+      "archetype": "work_hub",
+      "archetype_label": "Kota Minyak & Pusat Bisnis Riau",
+      "preferences": {
+        "highlight": "Pusat bisnis Riau dengan ekonomi kuat di sektor migas dan perkebunan. Peluang kerja di bidang energi dan korporat.",
+        "skor_karir": 68,
+        "skor_fasilitas": 72,
+        "skor_affordable": 65,
+        "tags": ["oil_city", "corporate", "business_hub", "sumatera"]
+      },
+      "has_area_selector": false,
+      "areas": [],
+      "baseline": {
+        "kos": 1400000,
+        "makan_masak": 950000,
+        "makan_beli": 1950000,
+        "transport_motor": 480000,
+        "transport_mobil": 1450000,
+        "transport_umum": 210000,
+        "utilitas": 510000
+      },
+      "comfort_thresholds": {
+        "bertahan": 3300000,
+        "nyaman": 5600000,
+        "lega": 8000000
+      }
+    },
+    {
+      "id": "batam",
+      "name": "Batam",
+      "province": "Kepulauan Riau",
+      "tier": "besar",
+      "umk": 4244880,
+      "ump_2025_official": 3985000,
+      "umk_verified": false,
+      "umk_note": "UMK Kota Batam 2025 x 1.065 [EST] — Free Trade Zone dengan UMK tinggi",
+      "umk_source": "Kemnaker / Disnakertrans Kepulauan Riau 2025 [EST]",
+      "archetype": "industrial",
+      "archetype_label": "Kawasan Industri & Free Trade Zone",
+      "preferences": {
+        "highlight": "Free Trade Zone dengan banyak pabrik multinasional. UMK tinggi, dekat Singapura, pertumbuhan pesat.",
+        "skor_karir": 75,
+        "skor_fasilitas": 72,
+        "skor_affordable": 55,
+        "tags": ["free_trade_zone", "multinational", "high_umk", "strategic_location"]
+      },
+      "has_area_selector": false,
+      "areas": [],
+      "baseline": {
+        "kos": 1600000,
+        "makan_masak": 1050000,
+        "makan_beli": 2100000,
+        "transport_motor": 500000,
+        "transport_mobil": 1550000,
+        "transport_umum": 230000,
+        "utilitas": 560000
+      },
+      "comfort_thresholds": {
+        "bertahan": 3600000,
+        "nyaman": 6200000,
+        "lega": 9000000
+      }
+    },
+    {
+      "id": "makassar",
+      "name": "Makassar",
+      "province": "Sulawesi Selatan",
+      "tier": "metropolitan",
+      "umk": 3895266,
+      "ump_2025_official": 3659874,
+      "umk_verified": true,
+      "umk_note": "UMK Kota Makassar 2025 resmi x 1.065",
+      "umk_source": "Kemnaker / Disnakertrans Sulawesi Selatan 2025",
+      "archetype": "eastern_hub",
+      "archetype_label": "Hub Utama Indonesia Timur",
+      "preferences": {
+        "highlight": "Pintu gerbang Indonesia Timur. Pertumbuhan cepat dengan kuliner khas yang terkenal di seluruh nusantara.",
+        "skor_karir": 72,
+        "skor_fasilitas": 75,
+        "skor_affordable": 62,
+        "tags": ["eastern_hub", "port_city", "culinary", "growing_fast"]
+      },
+      "has_area_selector": false,
+      "areas": [],
+      "baseline": {
+        "kos": 1400000,
+        "makan_masak": 1000000,
+        "makan_beli": 2100000,
+        "transport_motor": 500000,
+        "transport_mobil": 1500000,
+        "transport_umum": 200000,
+        "utilitas": 550000
+      },
+      "comfort_thresholds": {
+        "bertahan": 3800000,
+        "nyaman": 6500000,
+        "lega": 9500000
+      }
+    },
+    {
+      "id": "balikpapan",
+      "name": "Balikpapan",
+      "province": "Kalimantan Timur",
+      "tier": "besar",
+      "umk": 3753798,
+      "ump_2025_official": 3525163,
+      "umk_verified": false,
+      "umk_note": "UMK Kota Balikpapan 2025 x 1.065 [EST] — naik karena efek IKN",
+      "umk_source": "Kemnaker / Disnakertrans Kaltim 2025 [EST]",
+      "archetype": "work_hub",
+      "archetype_label": "Kota Minyak & Pintu Gerbang IKN",
+      "preferences": {
+        "highlight": "Kota bersih terencana, pusat migas Kalimantan, dan kini pintu gerbang menuju IKN Nusantara.",
+        "skor_karir": 72,
+        "skor_fasilitas": 78,
+        "skor_affordable": 58,
+        "tags": ["oil_gas", "clean_city", "ikn_effect", "growing"]
+      },
+      "has_area_selector": false,
+      "areas": [],
+      "baseline": {
+        "kos": 1500000,
+        "makan_masak": 1000000,
+        "makan_beli": 2150000,
+        "transport_motor": 500000,
+        "transport_mobil": 1500000,
+        "transport_umum": 210000,
+        "utilitas": 540000
+      },
+      "comfort_thresholds": {
+        "bertahan": 3400000,
+        "nyaman": 5800000,
+        "lega": 8500000
+      }
+    },
+    {
+      "id": "manado",
+      "name": "Manado",
+      "province": "Sulawesi Utara",
+      "tier": "sedang",
+      "umk": 3775425,
+      "ump_2025_official": 3545000,
+      "umk_verified": false,
+      "umk_note": "UMP Sulawesi Utara 2025 x 1.065 [EST]",
+      "umk_source": "Kemnaker / Disnakertrans Sulawesi Utara 2025 [EST]",
+      "archetype": "all_rounder",
+      "archetype_label": "Kota Nyaman di Ujung Sulawesi",
+      "preferences": {
+        "highlight": "Kota pelabuhan dengan alam indah, kuliner beragam, dan suasana ramah. Relatif terjangkau untuk Kawasan Timur.",
+        "skor_karir": 55,
+        "skor_fasilitas": 65,
+        "skor_affordable": 70,
+        "tags": ["port_city", "natural_beauty", "friendly", "eastern_indonesia"]
+      },
+      "has_area_selector": false,
+      "areas": [],
+      "baseline": {
+        "kos": 1100000,
+        "makan_masak": 900000,
+        "makan_beli": 1800000,
+        "transport_motor": 430000,
+        "transport_mobil": 1350000,
+        "transport_umum": 190000,
+        "utilitas": 480000
+      },
+      "comfort_thresholds": {
+        "bertahan": 3000000,
+        "nyaman": 5200000,
+        "lega": 7500000
+      }
+    }
+  ]
+}
